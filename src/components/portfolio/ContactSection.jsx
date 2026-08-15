@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, MapPin, Github, Linkedin, Instagram } from "lucide-react";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrpzakdz";
+
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.target),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setStatus("sent");
       setForm({ name: "", email: "", message: "" });
-    }, 3000);
+      setTimeout(() => setStatus("idle"), 3000);
+    } catch {
+      setStatus("error");
+    }
   };
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -82,6 +93,7 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-5 font-mono">
             <Field label="$ name">
               <input
+                name="name"
                 value={form.name}
                 onChange={update("name")}
                 required
@@ -92,6 +104,7 @@ export default function ContactSection() {
             <Field label="$ email">
               <input
                 type="email"
+                name="email"
                 value={form.email}
                 onChange={update("email")}
                 required
@@ -101,6 +114,7 @@ export default function ContactSection() {
             </Field>
             <Field label="$ message">
               <textarea
+                name="message"
                 value={form.message}
                 onChange={update("message")}
                 required
@@ -112,10 +126,10 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              disabled={sent}
+              disabled={status === "sending" || status === "sent"}
               className="signal-glow flex w-full items-center justify-center gap-3 bg-primary px-6 py-4 font-mono text-xs uppercase tracking-[0.25em] text-primary-foreground transition-opacity disabled:opacity-70"
             >
-              {sent ? "✓ Message Sent" : "Execute Send"}
+              {status === "sent" ? "✓ Message Sent" : status === "sending" ? "Sending…" : status === "error" ? "Failed — Try Again" : "Execute Send"}
               <Send size={14} />
             </button>
           </form>
