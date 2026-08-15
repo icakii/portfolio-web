@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 7%;
+  --primary: 6 78% 57%;
+  --primary-foreground: 0 0% 100%;
+  --card: 0 0% 98%;
+  --border: 0 0% 88%;
+  --muted-foreground: 0 0% 45%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Space Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ghost-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 800;
+  color: hsl(var(--foreground) / 0.04);
+  line-height: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.signal-glow {
+  box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+}
+.signal-glow:hover {
+  box-shadow: 0 0 30px 0 hsl(var(--primary) / 0.35);
+}
