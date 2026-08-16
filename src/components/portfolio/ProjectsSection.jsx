@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Image } from "@/components/ui/image";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import ReadMore from "./ReadMore";
+import MIREN_COVER from "@/assets/images/miren-cover.jpg";
 
 const PROJECTS = [
   {
@@ -10,7 +11,7 @@ const PROJECTS = [
     title: "MIREN",
     tag: "Magazine & Online Community",
     year: "2026",
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/0a25f45ab_generated_285ce464.png",
+    img: MIREN_COVER,
     summary:
       "A platform for young creative talent to showcase their work and connect — spanning fashion, music, photography, and every art discipline in between.",
     stack: ["JavaScript", "Node.js", "Tailwind CSS", "PostgreSQL"],

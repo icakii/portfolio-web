@@ -1,39 +1,47 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Image } from "@/components/ui/image";
+import ARCHIVE_1 from "@/assets/images/archive-1-beach.jpg";
+import ARCHIVE_2 from "@/assets/images/archive-2-selfie.jpg";
+import ARCHIVE_3 from "@/assets/images/archive-3-night.jpg";
+import ARCHIVE_4 from "@/assets/images/archive-4-illustration.jpg";
 
 const LOOKS = [
   {
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/e45a28b6a_generated_e3315da1.png",
-    title: "Concrete Form",
-    meta: "CAMPAIGN / SS26",
+    img: ARCHIVE_1,
+    title: "Coastline",
+    meta: "PORTRAIT / 2026",
     depth: "z-30",
     span: "md:col-span-5 md:row-span-2",
     aspect: "aspect-[3/4]",
+    objectPosition: "object-center",
   },
   {
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/a2b7e3ded_generated_6fa7cb04.png",
-    title: "Raw Light",
-    meta: "EDITORIAL / VOL.04",
+    img: ARCHIVE_2,
+    title: "Studio",
+    meta: "CANDID / MIRROR",
     depth: "z-20",
     span: "md:col-span-4",
     aspect: "aspect-[3/4]",
+    objectPosition: "object-center",
   },
   {
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/5099ff90e_generated_5f5e032d.png",
-    title: "Kinetic Body",
-    meta: "SPORT / MOTION",
+    img: ARCHIVE_3,
+    title: "After Hours",
+    meta: "PORTRAIT / NIGHT",
     depth: "z-10",
     span: "md:col-span-3",
     aspect: "aspect-[3/4]",
+    objectPosition: "object-center",
   },
   {
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/c31e0659f_generated_5a609f69.png",
-    title: "Static Gaze",
-    meta: "PORTRAIT / COVER",
+    img: ARCHIVE_4,
+    title: "Illustrated",
+    meta: "DIGITAL / FAN ART",
     depth: "z-40",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
+    objectPosition: "object-top",
   },
 ];
 
@@ -99,7 +107,7 @@ function LookCard({ look, index }) {
           <Image
             src={look.img}
             alt={look.title}
-            className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+            className={`h-full w-full object-cover ${look.objectPosition} grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105`}
             fittingType="fill"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

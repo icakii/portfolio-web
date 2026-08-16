@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Image } from "@/components/ui/image";
 import { ArrowDown, Circle } from "lucide-react";
-
-const HERO_IMG = "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/12b0b1617_generated_478390ee.png";
+import HERO_IMG from "@/assets/images/hero-portrait.jpg";
 
 const codeLines = [
   { t: "const hristo = {", c: "text-foreground/40" },
