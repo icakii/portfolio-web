@@ -1,23 +1,16 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Trophy, Code, Camera, Gamepad2, Sparkles } from "lucide-react";
+import { Trophy, Code, Sparkles } from "lucide-react";
 
 const LOG = [
-  { year: "2026", title: "Shipped Kinetic Engine v1.0", cat: "Engineering", icon: Code },
-  { year: "2025", title: "Featured Editorial — Brutalist Vol.04", cat: "Fashion", icon: Camera },
-  { year: "2025", title: "Regional Finalist — Esports Analytics Hack", cat: "Gaming", icon: Gamepad2 },
-  { year: "2024", title: "National Sprint Qualifier — Top 8", cat: "Sport", icon: Trophy },
-  { year: "2024", title: "Atelier OS — 1k+ Studio Downloads", cat: "Engineering", icon: Sparkles },
-  { year: "2023", title: "Runway Debut — Concrete Form Campaign", cat: "Fashion", icon: Camera },
-  { year: "2023", title: "Certified Advanced Frontend Architecture", cat: "Engineering", icon: Code },
-  { year: "2022", title: "Captain — Competitive Gaming Roster", cat: "Gaming", icon: Gamepad2 },
+  { year: "2026", title: "Founded MIREN — Magazine & Online Community", cat: "Engineering", icon: Sparkles },
+  { year: "2025", title: "Top 8 World Qualifier Placement — Marvel Rivals", cat: "Esports", icon: Trophy },
+  { year: "2024", title: "Completed Advanced C++ Certification — Fundamentals to OOP", cat: "Engineering", icon: Code },
 ];
 
 const catColor = {
   Engineering: "text-primary",
-  Fashion: "text-foreground/80",
-  Gaming: "text-primary",
-  Sport: "text-foreground/80",
+  Esports: "text-foreground/80",
 };
 
 export default function AchievementsSection() {

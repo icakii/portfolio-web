@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Github, Linkedin, Instagram } from "lucide-react";
+import { Send, Mail, MapPin, Github, Instagram, Video, Hash } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrpzakdz";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwleredk";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -43,29 +43,35 @@ export default function ContactSection() {
           <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">06 — The Terminal</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Let's Build.</h2>
           <p className="mt-6 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-            Open to collaborations across engineering, design, fashion, and competitive projects. Send a brief and you'll hear back within 48 hours.
+            Commissions open for web development, modeling, and graphic design — plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
           </p>
 
           <div className="mt-10 space-y-4">
-            <a href="mailto:hello@polymath.studio" className="group flex items-center gap-4 border-b border-border pb-4 transition-colors hover:border-primary">
+            <a href="mailto:hristo@varbanov.eu" className="group flex items-center gap-4 border-b border-border pb-4 transition-colors hover:border-primary">
               <Mail size={18} className="text-primary" />
-              <span className="font-mono text-sm">hello@polymath.studio</span>
+              <span className="font-mono text-sm">hristo@varbanov.eu</span>
             </a>
             <div className="flex items-center gap-4 border-b border-border pb-4">
               <MapPin size={18} className="text-primary" />
-              <span className="font-mono text-sm">Remote / Worldwide</span>
+              <span className="font-mono text-sm">Sofia, Bulgaria — Remote</span>
+            </div>
+            <div className="flex items-center gap-4 border-b border-border pb-4">
+              <Hash size={18} className="text-primary" />
+              <span className="font-mono text-sm">Discord: icaki2k</span>
             </div>
           </div>
 
           <div className="mt-8 flex gap-3">
             {[
-              { Icon: Github, label: "GitHub" },
-              { Icon: Linkedin, label: "LinkedIn" },
-              { Icon: Instagram, label: "Instagram" },
-            ].map(({ Icon, label }) => (
+              { Icon: Github, label: "GitHub", href: "https://github.com/icakii" },
+              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/icaki2k/" },
+              { Icon: Video, label: "TikTok", href: "https://www.tiktok.com/@icaki2k" },
+            ].map(({ Icon, label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={label}
                 className="grid h-11 w-11 place-items-center border border-border transition-colors hover:bg-foreground hover:text-background"
               >
@@ -137,7 +143,7 @@ export default function ContactSection() {
       </div>
 
       <footer className="relative z-10 mt-24 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/40 md:flex-row">
-        <span>© 2026 The Polymath — All Rights Reserved</span>
+        <span>© 2026 Hristo Varbanov — All Rights Reserved</span>
         <span>Designed & Engineered with Precision</span>
       </footer>
     </section>

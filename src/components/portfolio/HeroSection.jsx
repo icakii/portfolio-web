@@ -6,14 +6,14 @@ import { ArrowDown, Circle } from "lucide-react";
 const HERO_IMG = "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/12b0b1617_generated_478390ee.png";
 
 const codeLines = [
-  { t: "const polymath = {", c: "text-foreground/40" },
-  { t: "  identity: 'creative technologist',", c: "text-foreground/80" },
+  { t: "const hristo = {", c: "text-foreground/40" },
+  { t: "  identity: 'full-stack developer',", c: "text-foreground/80" },
   { t: "  disciplines: [", c: "text-foreground/80" },
-  { t: "    'engineering', 'design',", c: "text-primary" },
-  { t: "    'sport', 'fashion', 'gaming'", c: "text-primary" },
+  { t: "    'web development', 'marketing',", c: "text-primary" },
+  { t: "    'fashion', 'esports', 'content'", c: "text-primary" },
   { t: "  ],", c: "text-foreground/80" },
-  { t: "  ethos: 'precision + expression',", c: "text-foreground/80" },
-  { t: "  status: 'always building'", c: "text-foreground/80" },
+  { t: "  ethos: 'precision + creativity',", c: "text-foreground/80" },
+  { t: "  status: 'commissions open'", c: "text-foreground/80" },
   { t: "}", c: "text-foreground/40" },
 ];
 
@@ -31,7 +31,7 @@ export default function HeroSection() {
         style={{ y: ghostY }}
         className="ghost-text absolute left-[-2vw] top-[18vh] text-[34vw] md:text-[26vw]"
       >
-        POLYMATH
+        VARBANOV
       </motion.div>
 
       <div className="relative z-10 mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-0 px-6 pb-20 pt-28 md:grid-cols-12 md:px-16 md:pt-0">
@@ -68,15 +68,15 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
-              <Circle size={8} fill="currentColor" /> Available for collaboration
+              <Circle size={8} fill="currentColor" /> Commissions open — web dev, modeling & design
             </div>
             <h1 className="mt-6 font-display text-[14vw] font-black leading-[0.82] tracking-[-0.04em] md:text-[7.5vw] lg:text-[6.5vw]">
-              BUILDER.<br />
-              <span className="text-primary">ATHLETE.</span><br />
-              VISIONARY.
+              DEVELOPER.<br />
+              <span className="text-primary">FOUNDER.</span><br />
+              CREATIVE.
             </h1>
             <p className="mt-8 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-              A multi-disciplinary creative operating at the intersection of code, sport, fashion, and gaming — engineering experiences with the precision of an athlete and the eye of an editor.
+              I'm Hristo Varbanov, a 20-year-old Computer Science student and full-stack web developer based in Sofia, Bulgaria. I founded MIREN, a magazine and community platform for young creative talent, and bring the same precision to code, marketing, fashion, and competitive esports.
             </p>
           </motion.div>
 

@@ -7,36 +7,18 @@ import ReadMore from "./ReadMore";
 const PROJECTS = [
   {
     id: "01",
-    title: "Kinetic Engine",
-    tag: "Real-time Systems",
+    title: "MIREN",
+    tag: "Magazine & Online Community",
     year: "2026",
     img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/0a25f45ab_generated_285ce464.png",
     summary:
-      "A real-time motion-capture pipeline that turns athletic movement into playable game data — bridging the gym and the screen.",
-    stack: ["TypeScript", "WebGL", "WebRTC", "MediaPipe"],
-    body: "Built to translate raw athletic performance into interactive digital experiences, Kinetic Engine ingests camera input at 120fps, applies pose estimation, and streams normalized motion vectors into a custom WebGL renderer. The system powers a training mode where athletes replay their form against a pro baseline, with sub-frame latency tuned for competitive feedback loops.",
-  },
-  {
-    id: "02",
-    title: "Atelier OS",
-    tag: "Design Tooling",
-    year: "2025",
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/790e59d17_generated_ae1ea7d0.png",
-    summary:
-      "A brutalist design system and component library engineered for editorial-grade fashion and brand portfolios.",
-    stack: ["React", "Tailwind", "Framer Motion", "Storybook"],
-    body: "Atelier OS is a headless component framework built for studios that refuse the generic. Every primitive is tuned for high-contrast editorial layouts — asymmetric grids, kinetic type, and scroll-driven choreography — while keeping accessibility and performance first-class. Shipped with a living documentation site and a token pipeline that syncs design files to code.",
-  },
-  {
-    id: "03",
-    title: "Arena Ledger",
-    tag: "Data / Sport",
-    year: "2025",
-    img: "https://media.base44.com/images/public/6a7faae27d5091f056ce7aff/93f8c4eb0_generated_b568e849.png",
-    summary:
-      "A competitive analytics platform that ranks and visualizes esports and athletic performance on one timeline.",
-    stack: ["Node.js", "PostgreSQL", "D3.js", "Redis"],
-    body: "Arena Ledger unifies esports telemetry and traditional sports stats into a single chronological feed. It ingests match data, normalizes across titles, and renders performance curves that let coaches compare a gamer's APM trend against a sprinter's split times. The ranking engine runs on a Redis-backed pipeline that updates leaderboards in under 200ms.",
+      "A platform for young creative talent to showcase their work and connect — spanning fashion, music, photography, and every art discipline in between.",
+    stack: ["JavaScript", "Node.js", "Tailwind CSS", "PostgreSQL"],
+    body: "MIREN launched as a magazine and community hub built to give young artists across fashion, music, and photography a shared home. In its first two months it grew to 1,500+ followers across social platforms and a Discord community of 200+ members, sold 40+ copies of its debut print issue, and ran two art competitions with prize pools exceeding €200. I led the project end to end — management, investment, website development, social media strategy, content creation, and logistics — as the sole hands-on contributor on the team.",
+    links: {
+      source: "https://github.com/icakii/magazine-123",
+      live: "https://mirenmagazine.com",
+    },
   },
 ];
 
@@ -133,12 +115,16 @@ function ProjectCard({ project, index }) {
               ))}
             </div>
             <div className="mt-6 flex gap-3">
-              <a href="#" className="inline-flex items-center gap-2 bg-foreground px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-background transition-colors hover:bg-primary">
-                <Github size={14} /> Source
-              </a>
-              <a href="#" className="inline-flex items-center gap-2 border border-foreground/20 px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors hover:bg-foreground hover:text-background">
-                <ExternalLink size={14} /> Live
-              </a>
+              {project.links?.source && (
+                <a href={project.links.source} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-foreground px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-background transition-colors hover:bg-primary">
+                  <Github size={14} /> Source
+                </a>
+              )}
+              {project.links?.live && (
+                <a href={project.links.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-foreground/20 px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors hover:bg-foreground hover:text-background">
+                  <ExternalLink size={14} /> Live
+                </a>
+              )}
             </div>
           </ReadMore>
         </div>
