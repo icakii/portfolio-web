@@ -67,8 +67,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
-              <Circle size={8} fill="currentColor" /> Commissions open — web dev, modeling & design
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+              <Circle size={8} fill="currentColor" className="shrink-0" /> Commissions Open
             </div>
             <h1 className="mt-6 font-display text-[14vw] font-black leading-[0.82] tracking-[-0.04em] md:text-[7.5vw] lg:text-[6.5vw]">
               DEVELOPER.<br />
@@ -76,7 +76,7 @@ export default function HeroSection() {
               CREATIVE.
             </h1>
             <p className="mt-8 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-              I'm Hristo Varbanov, a 20-year-old Computer Science student and full-stack web developer based in Sofia, Bulgaria. I founded MIREN, a magazine and community platform for young creative talent, and bring the same precision to code, marketing, fashion, and competitive esports.
+              I'm Hristo Varbanov, a 20-year-old Computer Science student and full-stack web developer based in Sofia, Bulgaria. I bring precision and creativity across code, marketing, fashion, and competitive esports.
             </p>
           </motion.div>
 
@@ -108,7 +108,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+        className="absolute bottom-28 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/40">Scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
