@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const ROSTER = [
+  { name: "C++", level: "Specialization", number: "11" },
   { name: "JavaScript", level: "Engineering", number: "10" },
   { name: "HTML / CSS", level: "Frontend", number: "09" },
   { name: "Node.js", level: "Backend", number: "08" },
