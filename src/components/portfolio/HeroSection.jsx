@@ -23,6 +23,7 @@ export default function HeroSection() {
   const yLeft = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const yRight = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const ghostY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const cueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
   return (
     <section ref={ref} className="relative min-h-screen w-full overflow-hidden">
@@ -34,7 +35,7 @@ export default function HeroSection() {
         VARBANOV
       </motion.div>
 
-      <div className="relative z-10 mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-0 px-6 pb-20 pt-28 md:grid-cols-12 md:px-16 md:pt-0">
+      <div className="relative z-10 mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-0 px-6 pb-20 pt-28 md:grid-cols-12 md:px-16 md:pt-24 lg:pt-28">
         {/* Left — portrait */}
         <motion.div
           style={{ y: yLeft }}
@@ -105,10 +106,8 @@ export default function HeroSection() {
 
       {/* Scroll cue */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-28 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+        style={{ opacity: cueOpacity }}
+        className="pointer-events-none fixed bottom-24 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/40">Scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
