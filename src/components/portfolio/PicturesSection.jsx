@@ -14,7 +14,7 @@ const LOOKS = [
     depth: "z-30",
     span: "md:col-span-5 md:row-span-2",
     aspect: "aspect-[3/4]",
-    objectPosition: "object-center",
+    objectPosition: "50% 50%",
   },
   {
     img: ARCHIVE_2,
@@ -23,7 +23,7 @@ const LOOKS = [
     depth: "z-20",
     span: "md:col-span-4",
     aspect: "aspect-[3/4]",
-    objectPosition: "object-center",
+    objectPosition: "50% 20%",
   },
   {
     img: ARCHIVE_3,
@@ -32,7 +32,7 @@ const LOOKS = [
     depth: "z-10",
     span: "md:col-span-3",
     aspect: "aspect-[3/4]",
-    objectPosition: "object-center",
+    objectPosition: "50% 50%",
   },
   {
     img: ARCHIVE_4,
@@ -41,7 +41,7 @@ const LOOKS = [
     depth: "z-40",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
-    objectPosition: "object-top",
+    objectPosition: "50% 0%",
   },
 ];
 
@@ -107,7 +107,8 @@ function LookCard({ look, index }) {
           <Image
             src={look.img}
             alt={look.title}
-            className={`h-full w-full object-cover ${look.objectPosition} grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105`}
+            style={{ objectPosition: look.objectPosition }}
+            className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
             fittingType="fill"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
