@@ -87,7 +87,7 @@ export default function HeroSection() {
           >
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em]">
               <div className="flex items-center gap-2 text-primary">
-                <Circle size={8} fill="currentColor" className="shrink-0" /> Commissions Open
+                <Circle size={8} fill="currentColor" className="shrink-0" /> Available for Collaboration // Commissions Open
               </div>
               {views !== null && (
                 <div className="flex items-center gap-1.5 text-foreground/45">
