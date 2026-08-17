@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Image } from "@/components/ui/image";
-import { ArrowDown, Circle, Eye } from "lucide-react";
+import { Circle, Eye } from "lucide-react";
 import HERO_IMG from "@/assets/images/hero-portrait.jpg";
 
 const VIEWS_NAMESPACE = "hristo-varbanov-portfolio";
@@ -25,7 +25,6 @@ export default function HeroSection() {
   const yLeft = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const yRight = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const ghostY = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const cueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
   const [views, setViews] = useState(null);
   useEffect(() => {
@@ -134,17 +133,6 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        style={{ opacity: cueOpacity }}
-        className="pointer-events-none fixed bottom-24 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
-      >
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/40">Scroll</span>
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
-          <ArrowDown size={16} className="text-primary" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
