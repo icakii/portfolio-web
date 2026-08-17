@@ -43,7 +43,7 @@ export default function ContactSection() {
           <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">06 — The Terminal</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Let's Build.</h2>
           <p className="mt-6 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-            Commissions open for web development, modeling, and graphic design — plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
+            Commissions open for web development, modeling, social media content, and graphic design — plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
           </p>
 
           <div className="mt-10 space-y-4">
