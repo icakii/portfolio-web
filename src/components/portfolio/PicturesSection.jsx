@@ -18,8 +18,8 @@ const LOOKS = [
   },
   {
     img: ARCHIVE_2,
-    title: "Studio",
-    meta: "CANDID / MIRROR",
+    title: "Sport",
+    meta: "CANDID / MIRROR / 2026",
     depth: "z-20",
     span: "md:col-span-4",
     aspect: "aspect-[3/4]",
@@ -27,8 +27,8 @@ const LOOKS = [
   },
   {
     img: ARCHIVE_3,
-    title: "After Hours",
-    meta: "PORTRAIT / NIGHT",
+    title: "Studio",
+    meta: "PORTRAIT / PHOTOSHOOT / 2023",
     depth: "z-10",
     span: "md:col-span-3",
     aspect: "aspect-[3/4]",
@@ -37,7 +37,7 @@ const LOOKS = [
   {
     img: ARCHIVE_4,
     title: "Illustrated",
-    meta: "DIGITAL / FAN ART",
+    meta: "DIGITAL / FAN ART / 2026",
     depth: "z-40",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
@@ -81,7 +81,7 @@ export default function PicturesSection() {
         </div>
 
         <p className="mt-12 max-w-xl text-[1.125rem] leading-[1.6] text-foreground/65">
-          A curated archive spanning editorial fashion, athletic motion, and stoic portraiture — each frame a study in contrast, tension, and the single point of signal red.
+          A curated archive spanning photo shoots, portraits, and illustrations — a visual record of moments worth keeping.
         </p>
       </div>
     </section>
