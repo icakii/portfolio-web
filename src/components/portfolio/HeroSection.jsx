@@ -107,7 +107,7 @@ export default function HeroSection() {
               CREATIVE.
             </h1>
             <p className="mt-8 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-              I'm Hristo Varbanov, a 20-year-old Computer Science student and full-stack web developer based in Sofia, Bulgaria. I bring precision and creativity across code, marketing, fashion, and competitive esports.
+              I'm Hristo Varbanov, a 20-year-old Computer Science student and full-stack web developer based in Sofia, Bulgaria. I bring precision and creativity across code, marketing, fashion, and content creation.
             </p>
           </motion.div>
 
