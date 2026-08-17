@@ -33,7 +33,7 @@ export default function AchievementsSection() {
           <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">05 — The Terminal</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Achievement Log</h2>
           <p className="mt-5 max-w-lg text-[1.125rem] leading-[1.6] text-foreground/70">
-            A chronological record across code, sport, gaming, and fashion — milestones logged with the discipline of an athlete and the rigor of an engineer.
+            A running log of what's been built, earned, and learned along the way — from launching MIREN to competing at the highest level in esports.
           </p>
         </motion.div>
 

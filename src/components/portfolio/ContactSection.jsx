@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Github, Instagram, Video, Hash } from "lucide-react";
+import { Send, Mail, MapPin, Github, Instagram, Hash } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwleredk";
 
@@ -65,7 +65,6 @@ export default function ContactSection() {
             {[
               { Icon: Github, label: "GitHub", href: "https://github.com/icakii" },
               { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/icaki2k/" },
-              { Icon: Video, label: "TikTok", href: "https://www.tiktok.com/@icaki2k" },
             ].map(({ Icon, label, href }) => (
               <a
                 key={label}

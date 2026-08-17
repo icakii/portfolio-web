@@ -48,7 +48,7 @@ export default function SkillsSection() {
           <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">03 — Dynamic Roster</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">The Lineup</h2>
           <p className="mt-5 max-w-lg text-[1.125rem] leading-[1.6] text-foreground/70">
-            A starting roster of disciplines — each one a tactical advantage, ranked and ready for the field.
+            The tools and skills I reach for daily, spanning code, growth, and creative work.
           </p>
         </motion.div>
 
