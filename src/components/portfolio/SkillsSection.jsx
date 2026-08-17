@@ -2,14 +2,15 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const ROSTER = [
-  { name: "C++", level: "Specialization", number: "11" },
-  { name: "JavaScript", level: "Engineering", number: "10" },
-  { name: "HTML / CSS", level: "Frontend", number: "09" },
-  { name: "Node.js", level: "Backend", number: "08" },
-  { name: "Tailwind CSS", level: "Design Sys", number: "07" },
-  { name: "PostgreSQL", level: "Database", number: "06" },
-  { name: "C#", level: "Engineering", number: "05" },
-  { name: "AI Prompting & Tools", level: "Workflow", number: "04" },
+  { name: "C++", level: "Specialization", number: "12" },
+  { name: "JavaScript", level: "Engineering", number: "11" },
+  { name: "HTML / CSS", level: "Frontend", number: "10" },
+  { name: "Node.js", level: "Backend", number: "09" },
+  { name: "Tailwind CSS", level: "Design Sys", number: "08" },
+  { name: "PostgreSQL", level: "Database", number: "07" },
+  { name: "C#", level: "Engineering", number: "06" },
+  { name: "AI Prompting & Tools", level: "Workflow", number: "05" },
+  { name: "Content Creation", level: "Creative", number: "04" },
   { name: "Marketing", level: "Growth", number: "03" },
   { name: "Video Editing", level: "Creative", number: "02" },
   { name: "Modeling & Fashion", level: "Editorial", number: "01" },
@@ -20,7 +21,7 @@ const DOMAINS = [
   { label: "Marketing", value: "Growing brands and communities through content strategy, social media, and audience-driven campaigns." },
   { label: "Fashion", value: "Modeling and styling experience with a sharp eye for visual storytelling and editorial presentation." },
   { label: "Esports", value: "Competitive gaming background, including a Top 8 world qualifier finish in Marvel Rivals." },
-  { label: "Content", value: "Producing and editing video and social content that builds an audience from the ground up." },
+  { label: "Content", value: "Producing and editing social media content that builds an audience from the ground up." },
 ];
 
 export default function SkillsSection() {
