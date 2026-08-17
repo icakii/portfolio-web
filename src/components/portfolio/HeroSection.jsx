@@ -104,7 +104,7 @@ export default function HeroSection() {
             </div>
             <h1 className="mt-6 font-display text-[14vw] font-black leading-[0.82] tracking-[-0.04em] md:text-[7.5vw] lg:text-[6.5vw]">
               DEVELOPER.<br />
-              <span className="text-primary">FOUNDER.</span><br />
+              <span className="text-primary">VISIONARY.</span><br />
               CREATIVE.
             </h1>
             <p className="mt-8 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
