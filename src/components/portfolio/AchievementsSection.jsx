@@ -3,9 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Trophy, Code, Sparkles } from "lucide-react";
 
 const LOG = [
-  { year: "2026", title: "Founded MIREN — Magazine & Online Community", cat: "Engineering", icon: Sparkles },
-  { year: "2025", title: "Top 8 World Qualifier Placement — Marvel Rivals", cat: "Esports", icon: Trophy },
-  { year: "2024", title: "Completed Advanced C++ Certification — Fundamentals to OOP", cat: "Engineering", icon: Code },
+  { year: "2026", title: "Shipped Pace, a Personal Organizer PWA", cat: "Engineering", icon: Code },
+  { year: "2026", title: "Founded MIREN, Magazine & Online Community", cat: "Engineering", icon: Sparkles },
+  { year: "2025", title: "Top 8 World Qualifier Placement, Marvel Rivals", cat: "Esports", icon: Trophy },
+  { year: "2024", title: "Completed Advanced C++ Certification, Fundamentals to OOP", cat: "Engineering", icon: Code },
 ];
 
 const catColor = {
@@ -30,7 +31,7 @@ export default function AchievementsSection() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">05 — The Terminal</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">05 · The Terminal</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Achievement Log</h2>
           <p className="mt-5 max-w-lg text-[1.125rem] leading-[1.6] text-foreground/70">
             A running log of what's been built, earned, and learned along the way.

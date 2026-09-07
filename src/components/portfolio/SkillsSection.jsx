@@ -2,8 +2,9 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const ROSTER = [
-  { name: "C++", level: "Specialization", number: "12" },
-  { name: "JavaScript", level: "Engineering", number: "11" },
+  { name: "C++", level: "Specialization", number: "13" },
+  { name: "JavaScript", level: "Engineering", number: "12" },
+  { name: "React", level: "Frontend", number: "11" },
   { name: "HTML / CSS", level: "Frontend", number: "10" },
   { name: "Node.js", level: "Backend", number: "09" },
   { name: "Tailwind CSS", level: "Design Sys", number: "08" },
@@ -17,7 +18,7 @@ const ROSTER = [
 ];
 
 const DOMAINS = [
-  { label: "Engineering", value: "Full-stack web development — frontend, backend, and databases — built from scratch and shipped end to end." },
+  { label: "Engineering", value: "Full-stack web development: frontend, backend, and databases, built from scratch and shipped end to end." },
   { label: "Marketing", value: "Growing brands and communities through content strategy, social media, and audience-driven campaigns." },
   { label: "Fashion", value: "Modeling and styling experience with a sharp eye for visual storytelling and editorial presentation." },
   { label: "Esports", value: "Competitive gaming background, including a Top 8 world qualifier finish in Marvel Rivals." },
@@ -46,7 +47,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">03 — Dynamic Roster</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">03 · Dynamic Roster</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">The Lineup</h2>
           <p className="mt-5 max-w-lg text-[1.125rem] leading-[1.6] text-foreground/70">
             The tools and skills I reach for daily, spanning code, growth, and creative work.

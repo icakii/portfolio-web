@@ -53,7 +53,7 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="relative z-10 mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-0 px-6 pb-20 pt-28 md:grid-cols-12 md:px-16 md:pt-24 lg:pt-28">
-        {/* Left — portrait */}
+        {/* Left: portrait */}
         <motion.div
           style={{ y: yLeft }}
           className="relative col-span-1 flex items-end md:col-span-5 md:items-center"
@@ -75,7 +75,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Right — identity + code */}
+        {/* Right: identity + code */}
         <motion.div
           style={{ y: yRight }}
           className="col-span-1 flex flex-col justify-center md:col-span-7 md:pl-12"

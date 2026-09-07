@@ -4,6 +4,7 @@ import { Image } from "@/components/ui/image";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import ReadMore from "./ReadMore";
 import MIREN_COVER from "@/assets/images/miren-cover.jpg";
+import PACE_COVER from "@/assets/images/pace-cover.jpg";
 
 const PROJECTS = [
   {
@@ -13,12 +14,27 @@ const PROJECTS = [
     year: "2026",
     img: MIREN_COVER,
     summary:
-      "A platform for young creative talent to showcase their work and connect — spanning fashion, music, photography, and every art discipline in between.",
+      "A platform for young creative talent to showcase their work and connect, spanning fashion, music, photography, and every art discipline in between.",
     stack: ["JavaScript", "Node.js", "Tailwind CSS", "PostgreSQL"],
-    body: "MIREN launched as a magazine and community hub built to give young artists across fashion, music, and photography a shared home. In its first two months it grew to 1,500+ followers across social platforms and a Discord community of 200+ members, sold 40+ copies of its debut print issue, and ran two art competitions with prize pools exceeding €200. I led the project end to end — management, investment, website development, social media strategy, content creation, and logistics — as the sole hands-on contributor on the team.",
+    body: "MIREN launched as a magazine and community hub built to give young artists across fashion, music, and photography a shared home. In its first two months it grew to 1,500+ followers across social platforms and a Discord community of 200+ members, sold 40+ copies of its debut print issue, and ran two art competitions with prize pools exceeding €200. I led the project end to end, management, investment, website development, social media strategy, content creation, and logistics, as the sole hands-on contributor on the team.",
     links: {
       source: "https://github.com/icakii/magazine-123",
       live: "https://mirenmagazine.com",
+    },
+  },
+  {
+    id: "02",
+    title: "Pace",
+    tag: "Personal Organizer PWA",
+    year: "2026",
+    img: PACE_COVER,
+    summary:
+      "A calendar, task list, journal, subscription tracker, e-book reader, and a few games, folded into one calm, installable app.",
+    stack: ["React", "Supabase", "PostgreSQL", "PWA"],
+    body: "Pace bundles the handful of apps people check every day into one quiet, installable web app: calendar and recurring tasks with custom color-coded categories, a subscription and bill tracker with reminders, a daily journal with mood tags and streaks, an EPUB reader with a shared classics shelf, and a small games hub. Built solo end to end on React and Supabase, with row-level security on every table, push notifications, and a PWA install flow that works on Android, iPhone, and desktop. Live and in daily use by real people while I keep shipping on feedback.",
+    links: {
+      source: "https://github.com/icakii/pace",
+      live: "https://findyourpace.net",
     },
   },
 ];
@@ -46,7 +62,7 @@ export default function ProjectsSection() {
           className="mb-16 flex items-end justify-between"
         >
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">02 — The Logic Matrix</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">02 · The Logic Matrix</span>
             <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Selected Work</h2>
           </div>
           <span className="hidden font-mono text-xs text-foreground/40 md:block">{PROJECTS.length} PROJECTS</span>

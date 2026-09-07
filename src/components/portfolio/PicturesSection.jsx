@@ -68,7 +68,7 @@ export default function PicturesSection() {
           className="mb-16 flex items-end justify-between"
         >
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">04 — Aesthetic Archive</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">04 · Aesthetic Archive</span>
             <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">The Lookbook</h2>
           </div>
           <span className="hidden font-mono text-xs text-foreground/40 md:block">HOVER TO REVEAL</span>
@@ -81,7 +81,7 @@ export default function PicturesSection() {
         </div>
 
         <p className="mt-12 max-w-xl text-[1.125rem] leading-[1.6] text-foreground/65">
-          A curated archive spanning photo shoots, portraits, and illustrations — a visual record of moments worth keeping.
+          A curated archive spanning photo shoots, portraits, and illustrations, a visual record of moments worth keeping.
         </p>
       </div>
     </section>

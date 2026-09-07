@@ -33,17 +33,17 @@ export default function ContactSection() {
       <div className="ghost-text absolute right-[-2vw] top-[6vh] text-[24vw]">CONTACT</div>
 
       <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20">
-        {/* Left — intro + links */}
+        {/* Left: intro + links */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">06 — The Terminal</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">06 · The Terminal</span>
           <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Let's Build.</h2>
           <p className="mt-6 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-            Commissions open for web development, modeling, social media content, and graphic design — plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
+            Commissions open for web development, modeling, social media content, and graphic design, plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
           </p>
 
           <div className="mt-10 space-y-4">
@@ -53,7 +53,7 @@ export default function ContactSection() {
             </a>
             <div className="flex items-center gap-4 border-b border-border pb-4">
               <MapPin size={18} className="text-primary" />
-              <span className="font-mono text-sm">Sofia, Bulgaria — Remote</span>
+              <span className="font-mono text-sm">Sofia, Bulgaria · Remote</span>
             </div>
             <div className="flex items-center gap-4 border-b border-border pb-4">
               <Hash size={18} className="text-primary" />
@@ -80,7 +80,7 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Right — CLI form */}
+        {/* Right: CLI form */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export default function ContactSection() {
               disabled={status === "sending" || status === "sent"}
               className="signal-glow flex w-full items-center justify-center gap-3 bg-primary px-6 py-4 font-mono text-xs uppercase tracking-[0.25em] text-primary-foreground transition-opacity disabled:opacity-70"
             >
-              {status === "sent" ? "✓ Message Sent" : status === "sending" ? "Sending…" : status === "error" ? "Failed — Try Again" : "Execute Send"}
+              {status === "sent" ? "✓ Message Sent" : status === "sending" ? "Sending…" : status === "error" ? "Failed, Try Again" : "Execute Send"}
               <Send size={14} />
             </button>
           </form>
@@ -142,7 +142,7 @@ export default function ContactSection() {
       </div>
 
       <footer className="relative z-10 mt-24 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/40 md:flex-row">
-        <span>© 2026 Hristo Varbanov — All Rights Reserved</span>
+        <span>© 2026 Hristo Varbanov · All Rights Reserved</span>
         <span>Designed & Engineered with Precision</span>
       </footer>
     </section>
