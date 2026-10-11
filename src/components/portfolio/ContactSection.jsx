@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Github, Instagram, Hash } from "lucide-react";
+import { Github, Instagram } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwleredk";
+
+const inputClass =
+  "mt-1.5 w-full rounded-lg border border-ink/15 bg-white/70 px-4 py-3 text-base outline-none transition-colors placeholder:text-muted/60 focus:border-ink";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -20,7 +22,7 @@ export default function ContactSection() {
       if (!res.ok) throw new Error("Submission failed");
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
+      setTimeout(() => setStatus("idle"), 4000);
     } catch {
       setStatus("error");
     }
@@ -29,39 +31,24 @@ export default function ContactSection() {
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   return (
-    <section className="relative w-full overflow-hidden px-6 pb-20 pt-28 md:px-16 md:pt-32">
-      <div className="ghost-text absolute right-[-2vw] top-[6vh] text-[24vw]">CONTACT</div>
-
-      <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20">
-        {/* Left: intro + links */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">06 · The Terminal</span>
-          <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">Let's Build.</h2>
-          <p className="mt-6 max-w-md text-[1.125rem] leading-[1.6] text-foreground/70">
-            Commissions open for web development, modeling, social media content, and graphic design, plus open to collaborations across engineering, marketing, fashion, and creative projects. Send a brief and you'll hear back soon.
+    <section id="contact" className="mx-auto max-w-6xl px-5 pb-10 pt-20 md:px-8">
+      <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+        <div>
+          <h2 className="font-display text-5xl font-extrabold tracking-tight md:text-7xl">
+            Say <span className="font-serif font-normal italic text-tomato">hi</span>.
+          </h2>
+          <p className="mt-5 max-w-md leading-relaxed text-ink-soft">
+            I take on websites and apps, and I'm open to modeling, content and design work too. Tell me what you have in
+            mind and I'll get back to you within a day or two.
           </p>
-
-          <div className="mt-10 space-y-4">
-            <a href="mailto:hristo@varbanov.eu" className="group flex items-center gap-4 border-b border-border pb-4 transition-colors hover:border-primary">
-              <Mail size={18} className="text-primary" />
-              <span className="font-mono text-sm">hristo@varbanov.eu</span>
-            </a>
-            <div className="flex items-center gap-4 border-b border-border pb-4">
-              <MapPin size={18} className="text-primary" />
-              <span className="font-mono text-sm">Sofia, Bulgaria · Remote</span>
-            </div>
-            <div className="flex items-center gap-4 border-b border-border pb-4">
-              <Hash size={18} className="text-primary" />
-              <span className="font-mono text-sm">Discord: icaki2k</span>
-            </div>
-          </div>
-
-          <div className="mt-8 flex gap-3">
+          <a
+            href="mailto:hristo@varbanov.eu"
+            className="mt-8 inline-block font-display text-2xl font-bold underline decoration-tomato decoration-2 underline-offset-8 transition-colors hover:text-tomato md:text-3xl"
+          >
+            hristo@varbanov.eu
+          </a>
+          <p className="mt-6 text-sm text-muted">Sofia, Bulgaria, or remote · Discord: icaki2k</p>
+          <div className="mt-6 flex gap-3">
             {[
               { Icon: Github, label: "GitHub", href: "https://github.com/icakii" },
               { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/icaki2k/" },
@@ -72,88 +59,54 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="grid h-11 w-11 place-items-center border border-border transition-colors hover:bg-foreground hover:text-background"
+                className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 transition-colors hover:bg-ink hover:text-paper"
               >
                 <Icon size={18} />
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right: CLI form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="border border-border bg-card p-6 md:p-8"
-        >
-          <div className="mb-6 flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-            <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
-            <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
-            <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">message.sh</span>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-5 font-mono">
-            <Field label="$ name">
-              <input
-                name="name"
-                value={form.name}
-                onChange={update("name")}
-                required
-                placeholder="enter your name"
-                className="w-full border-b border-border bg-transparent py-2 text-[1rem] text-foreground outline-none transition-colors placeholder:text-foreground/30 focus:border-primary"
-              />
-            </Field>
-            <Field label="$ email">
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={update("email")}
-                required
-                placeholder="you@domain.com"
-                className="w-full border-b border-border bg-transparent py-2 text-[1rem] text-foreground outline-none transition-colors placeholder:text-foreground/30 focus:border-primary"
-              />
-            </Field>
-            <Field label="$ message">
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={update("message")}
-                required
-                rows={4}
-                placeholder="describe the project..."
-                className="w-full resize-none border-b border-border bg-transparent py-2 text-[1rem] leading-[1.6] text-foreground outline-none transition-colors placeholder:text-foreground/30 focus:border-primary"
-              />
-            </Field>
-
-            <button
-              type="submit"
-              disabled={status === "sending" || status === "sent"}
-              className="signal-glow flex w-full items-center justify-center gap-3 bg-primary px-6 py-4 font-mono text-xs uppercase tracking-[0.25em] text-primary-foreground transition-opacity disabled:opacity-70"
-            >
-              {status === "sent" ? "✓ Message Sent" : status === "sending" ? "Sending…" : status === "error" ? "Failed, Try Again" : "Execute Send"}
-              <Send size={14} />
-            </button>
-          </form>
-        </motion.div>
+        <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-line bg-paper-2/50 p-6 md:p-8">
+          <label className="block text-sm font-medium">
+            Name
+            <input name="name" value={form.name} onChange={update("name")} required className={inputClass} />
+          </label>
+          <label className="block text-sm font-medium">
+            Email
+            <input type="email" name="email" value={form.email} onChange={update("email")} required className={inputClass} />
+          </label>
+          <label className="block text-sm font-medium">
+            What are you working on?
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={update("message")}
+              required
+              rows={5}
+              className={`${inputClass} resize-none`}
+            />
+          </label>
+          <button
+            type="submit"
+            disabled={status === "sending" || status === "sent"}
+            className="w-full rounded-full bg-tomato px-6 py-3.5 font-medium text-white transition-colors hover:bg-tomato-dark disabled:opacity-70"
+          >
+            {status === "sent"
+              ? "Sent, thanks!"
+              : status === "sending"
+                ? "Sending..."
+                : status === "error"
+                  ? "Didn't go through, try again"
+                  : "Send message"}
+          </button>
+        </form>
       </div>
 
-      <footer className="relative z-10 mt-24 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/40 md:flex-row">
-        <span>© 2026 Hristo Varbanov · All Rights Reserved</span>
-        <span>Designed & Engineered with Precision</span>
+      <footer className="mt-20 flex flex-col items-center justify-between gap-2 border-t border-line pt-6 text-sm text-muted md:flex-row">
+        <span>© 2026 Hristo Varbanov</span>
+        <span>Made by me in Sofia</span>
       </footer>
     </section>
-  );
-}
-
-function Field({ label, children }) {
-  return (
-    <label className="block">
-      <span className="mb-1 block text-[11px] uppercase tracking-[0.2em] text-foreground/50">{label}</span>
-      {children}
-    </label>
   );
 }

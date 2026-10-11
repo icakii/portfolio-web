@@ -1,123 +1,48 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Image } from "@/components/ui/image";
+import React from "react";
+import { motion } from "framer-motion";
 import ARCHIVE_1 from "@/assets/images/archive-1-beach.jpg";
 import ARCHIVE_2 from "@/assets/images/archive-2-selfie.jpg";
 import ARCHIVE_3 from "@/assets/images/archive-3-night.jpg";
 import ARCHIVE_4 from "@/assets/images/archive-4-illustration.jpg";
 
-const LOOKS = [
-  {
-    img: ARCHIVE_1,
-    title: "Coastline",
-    meta: "PORTRAIT / 2026",
-    depth: "z-30",
-    span: "md:col-span-5 md:row-span-2",
-    aspect: "aspect-[3/4]",
-    objectPosition: "50% 50%",
-  },
-  {
-    img: ARCHIVE_2,
-    title: "Sport",
-    meta: "CANDID / MIRROR / 2026",
-    depth: "z-20",
-    span: "md:col-span-4",
-    aspect: "aspect-[3/4]",
-    objectPosition: "50% 20%",
-  },
-  {
-    img: ARCHIVE_3,
-    title: "Studio",
-    meta: "PORTRAIT / PHOTOSHOOT / 2023",
-    depth: "z-10",
-    span: "md:col-span-3",
-    aspect: "aspect-[3/4]",
-    objectPosition: "50% 50%",
-  },
-  {
-    img: ARCHIVE_4,
-    title: "Illustrated",
-    meta: "DIGITAL / FAN ART / 2026",
-    depth: "z-40",
-    span: "md:col-span-7",
-    aspect: "aspect-[16/10]",
-    objectPosition: "50% 0%",
-  },
+// A loose wall of prints, each tilted a little differently.
+const PHOTOS = [
+  { img: ARCHIVE_1, caption: "Coastline, 2026", tilt: -2.5, pos: "50% 50%" },
+  { img: ARCHIVE_2, caption: "Gym mirror, 2026", tilt: 1.5, pos: "50% 20%" },
+  { img: ARCHIVE_3, caption: "Studio shoot, 2023", tilt: -1, pos: "50% 50%" },
+  { img: ARCHIVE_4, caption: "Fan art I drew, 2026", tilt: 2.5, pos: "50% 0%" },
 ];
 
 export default function PicturesSection() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const ghostX = useTransform(scrollYProgress, [0, 1], [-80, 80]);
-
   return (
-    <section ref={ref} className="relative w-full overflow-hidden px-6 pb-32 pt-28 md:px-16 md:pt-32">
-      <motion.div
-        style={{ x: ghostX }}
-        className="ghost-text absolute right-[-3vw] top-[6vh] text-[24vw]"
-      >
-        ARCHIVE
-      </motion.div>
+    <section id="photos" className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+      <h2 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
+        Off the <span className="font-serif font-normal italic text-tomato">screen</span>
+      </h2>
+      <p className="mt-3 max-w-lg text-ink-soft">Shoots, portraits and the odd drawing.</p>
 
-      <div className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="mb-16 flex items-end justify-between"
-        >
-          <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">04 · Aesthetic Archive</span>
-            <h2 className="mt-3 font-display text-5xl font-extrabold tracking-[-0.03em] md:text-7xl">The Lookbook</h2>
-          </div>
-          <span className="hidden font-mono text-xs text-foreground/40 md:block">HOVER TO REVEAL</span>
-        </motion.div>
-
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[300px]">
-          {LOOKS.map((look, i) => (
-            <LookCard key={i} look={look} index={i} />
-          ))}
-        </div>
-
-        <p className="mt-12 max-w-xl text-[1.125rem] leading-[1.6] text-foreground/65">
-          A curated archive spanning photo shoots, portraits, and illustrations, a visual record of moments worth keeping.
-        </p>
+      <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-7">
+        {PHOTOS.map((p, i) => (
+          <motion.figure
+            key={p.caption}
+            initial={{ opacity: 0, y: 30, rotate: 0 }}
+            whileInView={{ opacity: 1, y: 0, rotate: p.tilt }}
+            whileHover={{ rotate: 0, y: -8, scale: 1.03 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ type: "spring", stiffness: 140, damping: 18, delay: i * 0.06 }}
+            className="bg-white p-2.5 pb-9 shadow-[0_20px_40px_-24px_rgba(27,25,22,0.5)] md:p-3 md:pb-10"
+          >
+            <img
+              src={p.img}
+              alt={p.caption}
+              loading="lazy"
+              style={{ objectPosition: p.pos }}
+              className="aspect-[3/4] w-full object-cover"
+            />
+            <figcaption className="mt-2 font-serif text-base italic text-ink-soft md:text-lg">{p.caption}</figcaption>
+          </motion.figure>
+        ))}
       </div>
     </section>
-  );
-}
-
-function LookCard({ look, index }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative h-[460px] md:h-auto ${look.span} ${look.depth}`}
-    >
-      <motion.div style={{ y }} className="relative h-full">
-        <div className="relative h-full w-full overflow-hidden">
-          <Image
-            src={look.img}
-            alt={look.title}
-            style={{ objectPosition: look.objectPosition }}
-            className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-            fittingType="fill"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-background/70">{look.meta}</div>
-            <div className="mt-1 font-display text-2xl font-bold text-background">{look.title}</div>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
   );
 }

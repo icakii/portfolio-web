@@ -2,42 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 7%;
-  --primary: 221 83% 53%;
-  --primary-foreground: 0 0% 100%;
-  --card: 0 0% 98%;
-  --border: 0 0% 88%;
-  --muted-foreground: 0 0% 45%;
-}
-
-* {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   margin: 0;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-family: "Space Grotesk", sans-serif;
+  background-color: #f5f1e8;
+  color: #1b1916;
+  font-family: Geist, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-.ghost-text {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 800;
-  color: hsl(var(--foreground) / 0.04);
-  line-height: 0.8;
-  white-space: nowrap;
+/* Paper grain: a few hundred bytes of SVG noise instead of an image. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   pointer-events: none;
-  user-select: none;
-  z-index: 0;
+  z-index: 60;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.signal-glow {
-  box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+/* Highlighter swipe behind a word. */
+.marker {
+  background-image: linear-gradient(transparent 58%, #f4d35e 58%, #f4d35e 88%, transparent 88%);
+  padding: 0 0.08em;
 }
-.signal-glow:hover {
-  box-shadow: 0 0 30px 0 hsl(var(--primary) / 0.35);
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
