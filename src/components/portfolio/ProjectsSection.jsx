@@ -30,6 +30,7 @@ const PROJECTS = [
       { src: KIME_COVER, label: "Kime club site" },
     ],
     links: [
+      { label: "tatamistudio.net", href: "https://tatamistudio.net" },
       { label: "Example club", href: "https://kimeclub.onrender.com" },
       { label: "Code", href: "https://github.com/icakii/Tatami" },
       { label: "Hub code", href: "https://github.com/icakii/TatamiHub" },
