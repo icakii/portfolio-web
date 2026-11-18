@@ -15,7 +15,7 @@ const TIMELINE = [
   { year: "2026", text: "Shipped Pace, now used daily" },
   { year: "2026", text: "Founded MIREN, a magazine and community" },
   { year: "2024", text: "Advanced C++ certification" },
-  { year: "Before", text: "Modeling: shoots and studio work" },
+  { year: "Before", text: "Modeling and competitive esports" },
 ];
 
 const fadeUp = {
