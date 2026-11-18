@@ -11,7 +11,7 @@ const SKILLS = [
 ];
 
 const TIMELINE = [
-  { year: "2026", text: "Started Tatami with a friend; first client, Spartak 14 Pleven" },
+  { year: "2026", text: "Started Tatami with a friend" },
   { year: "2026", text: "Shipped Pace, now used daily" },
   { year: "2026", text: "Founded MIREN, a magazine and community" },
   { year: "2024", text: "Advanced C++ certification" },
