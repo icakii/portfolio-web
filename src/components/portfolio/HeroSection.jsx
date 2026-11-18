@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import HERO_IMG from "@/assets/images/hero-portrait.jpg";
 
 const VIEWS_NAMESPACE = "hristo-varbanov-portfolio";
@@ -114,6 +115,15 @@ export default function HeroSection() {
             </a>
             <a href="mailto:hristo@varbanov.eu" className="rounded-full border border-ink/20 px-6 py-3 text-sm font-medium transition-colors hover:border-ink">
               hristo@varbanov.eu
+            </a>
+            <a
+              href="https://www.linkedin.com/in/hristo-varbanov-a41b9a434/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-3 text-sm font-medium transition-colors hover:border-[#0a66c2] hover:text-[#0a66c2]"
+            >
+              <Linkedin size={16} />
+              LinkedIn
             </a>
           </motion.div>
         </div>

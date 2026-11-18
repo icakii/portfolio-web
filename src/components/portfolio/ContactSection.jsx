@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Instagram } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwleredk";
 
@@ -50,6 +50,7 @@ export default function ContactSection() {
           <p className="mt-6 text-sm text-muted">Sofia, Bulgaria, or remote · Discord: icaki2k</p>
           <div className="mt-6 flex gap-3">
             {[
+              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/hristo-varbanov-a41b9a434/" },
               { Icon: Github, label: "GitHub", href: "https://github.com/icakii" },
               { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/icaki2k/" },
             ].map(({ Icon, label, href }) => (
