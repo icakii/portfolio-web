@@ -19,6 +19,7 @@ export default {
         display: ["'Bricolage Grotesque'", "sans-serif"],
         serif: ["'Instrument Serif'", "serif"],
         sans: ["Geist", "system-ui", "sans-serif"],
+        mono: ["'Geist Mono'", "ui-monospace", "monospace"],
       },
     },
   },

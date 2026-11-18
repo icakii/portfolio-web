@@ -31,15 +31,15 @@ export default function ContactSection() {
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-5 pb-10 pt-20 md:px-8">
+    <section id="contact" className="mx-auto max-w-6xl border-t border-line px-5 pb-10 pt-24 md:px-8 md:pt-32">
       <div className="grid gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <h2 className="font-display text-5xl font-extrabold tracking-tight md:text-7xl">
             Say <span className="font-serif font-normal italic text-tomato">hi</span>.
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-ink-soft">
-            I take on websites and apps, and I'm open to modeling, content and design work too. Tell me what you have in
-            mind and I'll get back to you within a day or two.
+            I build websites and web apps. Tell me what you're working on and I'll get back to you within a day or
+            two.
           </p>
           <a
             href="mailto:hristo@varbanov.eu"
@@ -105,7 +105,7 @@ export default function ContactSection() {
 
       <footer className="mt-20 flex flex-col items-center justify-between gap-2 border-t border-line pt-6 text-sm text-muted md:flex-row">
         <span>© 2026 Hristo Varbanov</span>
-        <span>Made by me in Sofia</span>
+        <span>Built by me, in React</span>
       </footer>
     </section>
   );
