@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ARCHIVE_1 from "@/assets/images/archive-1-beach.jpg";
-import ARCHIVE_2 from "@/assets/images/archive-2-selfie.jpg";
+import MIRROR from "@/assets/images/photo-mirror.jpg";
 import ARCHIVE_3 from "@/assets/images/archive-3-night.jpg";
-import ARCHIVE_4 from "@/assets/images/archive-4-illustration.jpg";
+import STAIRS from "@/assets/images/photo-stairs.jpg";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -11,9 +11,9 @@ const EASE = [0.22, 1, 0.36, 1];
 // the row feel less like a grid.
 const PHOTOS = [
   { img: ARCHIVE_1, year: "2026", pos: "50% 50%", tall: false },
-  { img: ARCHIVE_2, year: "2026", pos: "50% 20%", tall: true },
+  { img: MIRROR, year: "2026", pos: "50% 25%", tall: true },
   { img: ARCHIVE_3, year: "2023", pos: "50% 50%", tall: false },
-  { img: ARCHIVE_4, year: "2026", pos: "50% 0%", tall: true },
+  { img: STAIRS, year: "2026", pos: "50% 40%", tall: true },
 ];
 
 export default function PicturesSection() {

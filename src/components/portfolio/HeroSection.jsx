@@ -13,7 +13,9 @@ function Letters({ text, delay = 0, className = "" }) {
   return (
     <span className={`inline-block whitespace-nowrap ${className}`} aria-label={text}>
       {[...text].map((ch, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-[0.08em] align-bottom" aria-hidden="true">
+        // The mask is padded on every side (and pulled back with negative
+        // margins) so tight tracking and italics don't shave the glyph edges.
+        <span key={i} className="-mx-[0.1em] -mt-[0.15em] inline-block overflow-hidden px-[0.1em] pb-[0.1em] pt-[0.15em] align-bottom" aria-hidden="true">
           <motion.span
             className="inline-block"
             initial={{ y: "110%" }}
