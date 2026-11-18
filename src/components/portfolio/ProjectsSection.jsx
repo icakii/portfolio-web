@@ -35,7 +35,7 @@ const PROJECTS = [
   {
     name: "Spartak 14",
     year: "2026",
-    oneLiner: "Tatami's first client, a karate club in Pleven.",
+    oneLiner: "A website for a karate club in Pleven.",
     body: "Their old site was slow and hard to read on a phone. I rebuilt it as one fast page from their archive: schedule, coaches, achievements and news, with a login that leads straight into the club's app.",
     mine: ["Content recovered from the old site and rewritten", "Design in the club's colors, built mobile first", "Linked to the club's own space in the Tatami app"],
     stack: "React · Vite · Tailwind",
